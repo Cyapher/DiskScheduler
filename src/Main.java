@@ -4,7 +4,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         
         //Variables
-        LinkedHashMap<String, Integer> requests = new LinkedHashMap<>(); //(RID, Location)
+        // LinkedHashMap<String, Integer> requests = new LinkedHashMap<>(); //(RID, Location)
+        List<Integer> requests = new ArrayList<>();
         Scanner scan = new Scanner(System.in);
 
         //Request Attributes
@@ -36,7 +37,7 @@ public class Main {
                 if(initPos >= trackSize || initPos < 0){
                     System.out.println("Initial Position must not be out of bounds");
                 } else{
-                    requests.put("R0", initPos);
+                    requests.add(initPos);
                     outOfBounds = false;
                 }
             } outOfBounds = true;
@@ -48,24 +49,24 @@ public class Main {
             for(int i = 0; i < reqNum; i++){             
                 while(outOfBounds){
                     System.out.println("R" + (i + 1) + ": ");
-                    RID = "R" + (i + 1);
+                    // RID = "R" + (i + 1);
                     tempLoc = scan.nextInt();
 
                     if(tempLoc >= trackSize || tempLoc < 0){
                         System.out.println("Location must not be out of bounds");
                     } else{
-                        requests.put(RID, tempLoc);
+                        requests.add(tempLoc);
                         outOfBounds = false;
                     }
                 }
                 outOfBounds = true;
             }
 
-            Set<Map.Entry<String, Integer>> locations = requests.entrySet();
+            // Set<Map.Entry<String, Integer>> locations = requests.entrySet();
 
             System.out.println("\nList of requests:");
-            for(Map.Entry<String, Integer> temp: locations){
-                System.out.println(temp.getKey() + ": " + temp.getValue());     
+            for(int i = 0; i < reqNum; i++){
+                System.out.println("R" + i + ": " + requests.get(i));     
             }
             System.out.println("hashmap: " + requests);
 
@@ -102,6 +103,8 @@ public class Main {
             if (choice.toUpperCase().equals("N")) {
                 again = false;
                 System.out.println("Thank You for using Disk Scheduler");
+            } else{
+                requests.clear();
             }
         }
 
