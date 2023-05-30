@@ -73,8 +73,8 @@ public class Main {
             System.out.println("\nEnter the letter of Disk Scheduler you want\n");
             System.out.println("A: First-Come-First-Serve \n");
             System.out.println("B: Shortest-Seek-Time-First \n");
-            System.out.println("C: Lorem Ipsum \n");
-            System.out.println("D: Lorem Ipsum \n");
+            System.out.println("C: Circular SCAN \n");
+            System.out.println("D: Circular LOOK \n");
 
             scheduler = scan.next();
 
@@ -93,8 +93,8 @@ public class Main {
                     cscan.scheduleCSCAN();
                     break;
                 case "D":
-                    // CLOOK clook = new CLOOK(requests, initPos, trackSize);
-                    // clook.scheduleCLOOK();
+                    CLOOK clook = new CLOOK(requests, initPos, trackSize);
+                    clook.scheduleCLOOK();
                     break;
                 default: System.out.println("Incorrect Input, try again!");  
             }
