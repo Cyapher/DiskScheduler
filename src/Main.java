@@ -89,10 +89,12 @@ public class Main {
                     sstf.scheduleSSTF();
                     break;
                 case "C":
-                    
+                    CSCAN cscan = new CSCAN(requests, initPos, trackSize);
+                    cscan.scheduleCSCAN();
                     break;
                 case "D":
-
+                    // CLOOK clook = new CLOOK(requests, initPos, trackSize);
+                    // clook.scheduleCLOOK();
                     break;
                 default: System.out.println("Incorrect Input, try again!");  
             }
