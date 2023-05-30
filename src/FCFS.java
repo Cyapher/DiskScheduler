@@ -28,6 +28,7 @@ public class FCFS {
         double seekTime = 0.0;
         //System.out.println("Sequence:");
 
+        //Computation for Total Head Movement and Seek Time
         for(int i = 0; i < requests.size(); i++){
             // System.out.println("Current Position: " + currPos);
             // System.out.println("Next Request: " + temp.getValue());
