@@ -23,7 +23,9 @@ public class Main {
 
         while (again == true) {
 
-            System.out.println("=========== OS Disk Scheduler Project ===========\n");
+            System.out.println("=========== OS Disk Scheduler Project ===========");
+            System.out.println("Made By:\n Anuma, Anica Kirstenjane\n Diaz, Carlos Gabriel");
+            System.out.println("=================================================\n");
 
             System.out.print("Enter no. of requests: ");
             reqNum = scan.nextInt();

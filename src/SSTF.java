@@ -20,51 +20,8 @@ public class SSTF {
         this.trackSize = trackSize;
     }
 
-    // public void scheduleSSTF() {
-
-    // System.out.println("=============== In SSTF ===============");
-    // System.out.println("Requests Order: " + requests);
-    // // System.out.println("Request ID\tPosition");
-    // List<Integer> seekTime = new ArrayList<>();
-    // List<Integer> list = new ArrayList<>(requests);
-    // int totalHeadMove = 0;
-
-    // list.add(initPos);
-    // Collections.sort(list);
-    // int i = list.indexOf(initPos);
-
-    // while (list.size() != 1) {
-    // int pos = list.get(i);
-    // // seq += pos + "-->";
-    // if (i == 0) {
-    // seekTime.add(list.get(1) - pos);
-    // list.remove(0);
-    // } else if (i == list.size() - 1) {
-    // seekTime.add(pos - list.get(--i));
-    // list.remove(i + 1);
-    // } else {
-
-    // int l = pos - list.get(i - 1);
-    // int r = list.get(i + 1) - pos;
-    // seekTime.add(Math.min(l, r));
-
-    // list.remove(i);
-    // if (r <= l)
-    // i--;
-    // }
-
-    // }
-    // totalHeadMove += Math.abs(currPos - requests.get(i));
-    // currPos = requests.get(i);
-    // System.out.println("Total Head Movement: " + totalHeadMove);
-    // System.out.println("Average Seek Time: " + seekTime);
-    // // System.out.println("Sequence:" + seq + "-->" + list.get(0));
-
-    // }
 
     public void scheduleSSTF() {
-        // List<Map.Entry<String, Integer>> locations = (List<Entry<String, Integer>>)
-        // requests;
         List<Integer> remainingReqs = requests;
 
         System.out.println("=============== In SSTF ===============");
@@ -74,17 +31,6 @@ public class SSTF {
         int totalRequest = requests.size();
         int totalHeadMove = 0;
         double seekTime = 0.0;
-
-        // for(int i = 0; i < requests.size(); i++){
-        // int nextRequest = findClosestRequest(currPos, remainingReqs);
-        // // System.out.println("Current Position: " + currPos);
-        // // System.out.println("Next Request: " + temp.getValue());
-        // totalHeadMove += Math.abs(currPos - nextRequest);
-        // currPos = nextRequest;
-        // // System.out.println("Total Head Movement: " + totalHeadMove);
-        // remainingReqs.remove(Integer.valueOf(nextRequest));
-        // System.out.println("R"+ i + "\t\t" + requests.get(i));
-        // }
 
         while (!remainingReqs.isEmpty()) {
             int nextRequest = findClosestRequest(currPos, remainingReqs);

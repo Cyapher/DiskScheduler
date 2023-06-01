@@ -22,7 +22,7 @@ public class FCFS {
         // Set<Map.Entry<String, Integer>> locations = requests.entrySet();
         System.out.println("=============== In FCFS ===============");
         System.out.println("Requests Order: " + requests);
-        System.out.println("Request ID\tPosition");
+        // System.out.println("Request ID\tPosition");
         currPos = initPos;
         int totalHeadMove = 0;
         double seekTime = 0.0;
